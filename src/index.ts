@@ -1,5 +1,6 @@
-import express, { Application, Request, Response } from "express";
+import express, { Application, Request, Response, Router } from "express";
 import dotenv from "dotenv";
+import SortTicketRouter from "./routes/sort-ticket.routes";
 
 dotenv.config();
 
@@ -8,9 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello, Express + TypeScript!");
-});
+app.use("/sort-ticket", SortTicketRouter);
 
 app.get("/health", (req: Request, res: Response) => {
   res.json({ status: "Server is running smoothly 🚀" });
