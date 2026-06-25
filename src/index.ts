@@ -1,8 +1,6 @@
-import express, { Application, Request, Response, Router } from "express";
-import dotenv from "dotenv";
+import "dotenv/config";
+import express, { Application, Request, Response } from "express";
 import SortTicketRouter from "./routes/sort-ticket.routes";
-
-dotenv.config();
 
 const app: Application = express();
 const PORT = process.env.PORT || 3000;
@@ -16,5 +14,5 @@ app.get("/health", (req: Request, res: Response) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  // console.log(`Server is running on http://localhost:${PORT}`);
 });

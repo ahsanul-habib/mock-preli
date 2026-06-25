@@ -1,4 +1,4 @@
 node_modules
 .puku
-
+.env
 package-lock.json
